@@ -1,0 +1,42 @@
+button
+	{
+		width: 65px; height: 40px;
+		border:0;
+		font-family: arial;
+		outline: 0;
+		border-radius: 5px
+
+	}
+table
+	{
+		background-color: #788375;
+
+
+	}
+#a
+	{
+		background-color: #AFD48B; font-family: arial; font-weight: bold;
+	}
+#b
+	{
+		background-color: red; font-family: arial; font-weight: bold;
+	}
+
+#scrn
+	{
+		margin-top: 19px;
+		height: 25vh;
+		width: 100%;
+		background-color: white;
+		padding-top: 80px;
+		border-radius: 5px
+	}
+#nokia
+	{
+		margin-top: -15px;
+		height: 3vh;
+		width: 100%;
+		background-color: #997E45;
+		font-family: arial;
+
+	}
