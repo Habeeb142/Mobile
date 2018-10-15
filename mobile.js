@@ -7,6 +7,7 @@ var sound1 = new Audio();
 sound1.src = "one.aac";
 var sound2 = new Audio();
 sound2.src = "two.aac";
+var screenHide2value
 
 
 setInterval(dateshow)
@@ -15,7 +16,11 @@ function dateshow()
 	showdate.innerHTML = new Date().getHours() + ":" + new Date().getMinutes();
 }
 
-
+function pressHash()
+{
+	screenhide.value+='#';
+	scrn.innerHTML+='#';
+}
 function press(x)
 {
 	document.getElementById('scrn').style.background="white";
@@ -39,7 +44,8 @@ function del()
 {
 	screenhide.value = screenhide.value.slice (0,-1);
 	scrn.innerHTML=screenhide.value;
-	//screenhide2.value=screenhide2.value.slice (0,-1);
+	screenhide2.value=screenhide2.value.slice (0,-1);
+	valuechecker.value=valuechecker.value.slice (0,-1);
 }
 
 function abort()
@@ -153,7 +159,7 @@ function call()
 
 	}*/
 
-	else if (voucherString.search(screenhide2.value)>0 && screenhide.value=='*555*'+screenhide2.value)
+	else if (voucherString.search(screenhide2.value)>0 && screenhide.value=='*555*'+screenhide2.value+ '#')
 		{
 			scrn.innerHTML="please wait...";
 			(cardused.includes(valuechecker.value))?
@@ -218,13 +224,13 @@ function msg3()
 function acc()
 {
 	scrn.innerHTML="";
-	scrn.innerHTML="Pulse Main balance:"+ amount +"; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
+	scrn.innerHTML="Pulse Main balance:#"+ amount +".00; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
 }
 function accMsg()
 {
 	scrn.innerHTML="";
 	amount+=200;
-	scrn.innerHTML="Accoint Recharge of #200 was Succesful Pulse Main balance:" + amount +":00 NGN; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
+	scrn.innerHTML="Account Recharge of #200 was Succesful Pulse Main balance:#" + amount +".00 NGN; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
 	for (var x = no.value-1; x < no.value; x++)
 		{
 			cardused[x]=screenhide2.value;
@@ -250,7 +256,7 @@ function voucherGenerator()
 {	
 	for (i = 0; i < no.value; i++)
 	{	
-		voucher[i] =Math.floor(Math.random()*1000000000000) 
+		voucher[i] =Math.floor(Math.random()*100000000000000) 
 		voucherBr = voucher[i] + "<br>";
 		vouchers.innerHTML += voucherBr;
 		voucherString = JSON.stringify(voucher);
