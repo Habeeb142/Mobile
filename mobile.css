@@ -3,40 +3,177 @@ button
 		width: 65px; height: 40px;
 		border:0;
 		font-family: arial;
-		outline: 0;
+		/*//outline: 0;*/
+		border-radius: 5px
+	}
+	button:hover, #call:hover, #abort:hover, #del:hover
+	{
+		width: 65px; height: 40px;
+		border:0;
+		font-family: arial;
+		background-color: green;
 		border-radius: 5px
 
 	}
+
 table
 	{
 		background-color: #788375;
-
-
+		margin-top: 0px;
+		margin-right: 250px;
+		position: sticky;
 	}
-#a
+#call
 	{
 		background-color: #AFD48B; font-family: arial; font-weight: bold;
 	}
-#b
+#abort
 	{
 		background-color: red; font-family: arial; font-weight: bold;
 	}
+#del
+{
+	background-color: #F8E6D1; font-family: arial; font-weight: bold;
+}
 
 #scrn
 	{
-		margin-top: 19px;
-		height: 25vh;
-		width: 100%;
+		margin: 0px 0px 12px 6px;
+		padding: 30px 0px 0px 9px;
+		height: 35vh;
+		width: 90%;
 		background-color: white;
-		padding-top: 80px;
-		border-radius: 5px
+		font-size: 15px;
+		font-weight: bold;
+	    font-family: arial;
+	    color: black;
+	    background-image: url(pic.jpg);
+	    background-size: cover;
+	    border-radius: 10px
 	}
+
 #nokia
 	{
-		margin-top: -15px;
+		margin-top: 6px;
 		height: 3vh;
 		width: 100%;
 		background-color: #997E45;
 		font-family: arial;
+		text-align: center;
 
 	}
+	#showdate
+	{
+		font-size: 15px;
+		font-family: arial;
+		color: #F6E4CF;
+		background-color: black;
+		border-radius: 5px;
+		width: 42px;
+		position: absolute;
+		top:87px;
+		right: 30.6%
+	}
+	td
+	{
+		width: 27px; height: 6px
+
+	}
+	#speaker
+	{
+		height: 1vh;
+		width: 35px;
+		background-color: black;
+		text-align: center;
+		margin-left: 85px;
+		border-radius: 9px
+	}
+	#hidescreen
+	{
+		display: none;
+	}
+
+
+fieldset
+{
+	position: absolute;
+	font-family: arial;
+	background-color: #997E45;
+	height: 95%;
+	margin-top: -30px;
+	margin-left: 200px;
+}
+legend
+{
+	background-color: white;
+	padding: 20px;
+	font-weight: bold;
+	font-size: 20px	
+}
+#buttongenerate,#no,#vouchers
+{
+	height: 4vh;
+	font-weight: bold;
+}
+footer
+{
+	position: relative;
+	padding-top:30px;
+	animation-name: footercolor;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+@keyframes footercolor
+	{
+		0%{background-color: #997E45}
+		25%{background-color:black}
+	}
+
+#todo
+{
+	background-color: #F6E3CC;
+	width: 80px;
+	font-family: arial;
+	font-style: italic;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 6px;
+	margin-left: 50%;
+	
+	animation-name: moveTodo;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	position: absolute;
+	transition: width 2s, height 2s
+}
+#todoList
+{
+	background-color: #F6E3CC;
+	width: 80px;
+	font-family: arial;
+	font-style: italic;
+	font-weight: bold;
+	padding: 15px;
+	border-radius: 6px;
+	margin-left: 48%;
+	margin-top: 10px;
+	position: absolute;
+}
+
+@keyframes moveTodo
+	{
+		from{margin-top: 50px}
+		to{margin-top: 500px}
+	}
+/*
+#todoList:hover
+{
+	width: 100px;
+	height: 90vh;
+	animation-duration: 0s;
+	top: 0px;
+	text-align: center;
+
+}*/
+
+
