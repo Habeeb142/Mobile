@@ -62,7 +62,7 @@ function call()
 	if(phonenumber.length==11)
 		{
 			phonenumber="";
-			if (amount>=5)
+			if (amount>5)
 				{
 					setInterval(dat,1000)
 					function dat()
@@ -72,7 +72,7 @@ function call()
 								{
 									amount-=5;
 									persec=0;
-									if (amount<=20)
+									if (amount<=5)
 										{
 											msg12();
 											call()
