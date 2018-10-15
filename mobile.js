@@ -61,7 +61,8 @@ function call()
 	var phonenumber=screenhide.value;
 	if(phonenumber.length==11)
 		{
-			if (amount>=10)
+			phonenumber="";
+			if (amount>=5)
 				{
 					setInterval(dat,1000)
 					function dat()
@@ -69,14 +70,14 @@ function call()
 							setTimeout(persec++,1000);
 							if (persec==1)
 								{
-									amount-=10;
+									amount-=5;
 									persec=0;
 									if (amount<=20)
 										{
 											msg12();
 											call()
 										}
-									if (amount==120) {sound1.play()}
+									if (amount==90) {sound1.play()}
 								}
 
 							setTimeout(countsec++,1000);
