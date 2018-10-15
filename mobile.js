@@ -1,4 +1,5 @@
-var counter=0; cardused=[];
+//var counter=0;
+cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
 var card; var amount=0; 
@@ -18,20 +19,20 @@ function dateshow()
 function press(x)
 {
 	document.getElementById('scrn').style.background="white";
-	counter++; 
-	if (counter!=12)
-	{
+	//counter++; 
+	//if (counter!=12)
+	//{
 		screenhide.value+=x;
 		screenhide2.value+=x;
 		valuechecker.value+=x;
 		scrn.innerHTML+=x;
-	}	
+	/*}	
 	else
 	{
 		screenhide.value+=x;
 		scrn.innerHTML += "<br>";
 		counter=0;
-	}
+	}*/
 }
 
 function del()
