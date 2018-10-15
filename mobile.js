@@ -1,7 +1,7 @@
 var counter=0; cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=0; var card1;var card2;var card3;
+var card; var amount=0; 
 var sound1 = new Audio();
 sound1.src = "one.aac";
 var sound2 = new Audio();
@@ -14,12 +14,7 @@ function dateshow()
 	showdate.innerHTML = new Date().getHours() + ":" + new Date().getMinutes();
 }
 
-function todo()
-{	
-	document.getElementById('todoList').style.width='170px';
-	//document.getElementById('todoList').style.width='90px';
-	todoList.innerHTML="<ol><li>Ability To call</li><br><li>Alert on empty account</li><br><li>Drop Call on Card Exhaust</li><br><li>*123# access</li><br><li>Voucher Generator</li><br><li>Recharge card LOad</li><br><li>Used Rechearge Identifier</li><br><li>Invalid Recharge Identifier</li>";
-}
+
 function press(x)
 {
 	document.getElementById('scrn').style.background="white";

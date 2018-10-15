@@ -21,7 +21,7 @@ table
 		background-color: #788375;
 		margin-top: 0px;
 		margin-right: 250px;
-		position: sticky;
+		
 	}
 #call
 	{
@@ -71,7 +71,7 @@ table
 		border-radius: 5px;
 		width: 42px;
 		position: absolute;
-		top:87px;
+		top:68px;
 		right: 30.6%
 	}
 	td
@@ -129,42 +129,8 @@ footer
 		25%{background-color:black}
 	}
 
-#todo
-{
-	background-color: #F6E3CC;
-	width: 80px;
-	font-family: arial;
-	font-style: italic;
-	font-weight: bold;
-	padding: 5px;
-	border-radius: 6px;
-	margin-left: 50%;
-	
-	animation-name: moveTodo;
-	animation-duration: 10s;
-	animation-iteration-count: infinite;
-	position: absolute;
-	transition: width 2s, height 2s
-}
-#todoList
-{
-	background-color: #F6E3CC;
-	width: 80px;
-	font-family: arial;
-	font-style: italic;
-	font-weight: bold;
-	padding: 15px;
-	border-radius: 6px;
-	margin-left: 48%;
-	margin-top: 10px;
-	position: absolute;
-}
 
-@keyframes moveTodo
-	{
-		from{margin-top: 50px}
-		to{margin-top: 500px}
-	}
+
 /*
 #todoList:hover
 {
