@@ -52,7 +52,7 @@ function abort()
 {
 	screenhide.value = screenhide.value.slice (0,0);	
 	//document.getElementById('scrn').style.background='grey';
-	scrn.innerHTML=screenhide2.value=valuechecker.value=""
+	scrn.innerHTML=screenhide2.value=valuechecker.value="";
 	
 }
 
@@ -95,6 +95,8 @@ function call()
 					setInterval(stopCall,5000);
 					function stopCall()
 						{
+							phonenumber="";
+							alert(phonenumber.lenght);
 							sound2.pause();
 							//document.getElementById('scrn').style.background='grey';
 							scrn.innerHTML=screenhide2.value=screenhide.value=valuechecker.value=   ""
