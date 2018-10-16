@@ -81,12 +81,14 @@ function call()
 									if (tariff='XtraCool'){amount-=5}
 									if(tariff='XtraValue'){amount-=10}
 									persec=0;
+
+									if (amount<=100) {sound1.play()}
 									if (amount<=20)
 										{
 											//sound2.play();
 											call();
 										}
-									if (amount==100) {sound1.play()}
+									
 								}
 
 							setTimeout(countsec++,1000);
