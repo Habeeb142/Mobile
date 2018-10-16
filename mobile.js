@@ -2,12 +2,11 @@
 cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=0; 
+var card; var amount=0; var card1;var card2;var card3;
 var sound1 = new Audio();
 sound1.src = "one.aac";
 var sound2 = new Audio();
 sound2.src = "two.aac";
-var screenHide2value
 
 
 setInterval(dateshow)
@@ -16,25 +15,31 @@ function dateshow()
 	showdate.innerHTML = new Date().getHours() + ":" + new Date().getMinutes();
 }
 
+function todo()
+{	
+	document.getElementById('todoList').style.width='170px';
+	//document.getElementById('todoList').style.width='90px';
+	todoList.innerHTML="<ol><li>Ability To call</li><br><li>Alert on empty account</li><br><li>Drop Call on Card Exhaust</li><br><li>*123# access</li><br><li>Voucher Generator</li><br><li>Recharge card LOad</li><br><li>Used Rechearge Identifier</li><br><li>Invalid Recharge Identifier</li><li>Account Balance Check</li><br>and more...";
+}
+
 function pressHash()
 {
-	screenhide.value+='#';
-	scrn.innerHTML+='#';
+	scrn.innerHTML=screenhide.value+='#';
 }
 function press(x)
 {
 	document.getElementById('scrn').style.background="white";
 	//counter++; 
-	//if (counter!=12)
-	//{
-		screenhide.value+=x;
-		screenhide2.value+=x;
-		valuechecker.value+=x;
-		scrn.innerHTML+=x;
+	/*if (counter!=12)
+	{*/
+		screenhide2.value=valuechecker.value+=x;
+		scrn.innerHTML=screenhide.value+=x;
+		
 	/*}	
 	else
 	{
-		screenhide.value+=x;
+		screenhide2.value=valuechecker.value+=x;
+		screenhide.value=
 		scrn.innerHTML += "<br>";
 		counter=0;
 	}*/
@@ -52,7 +57,7 @@ function abort()
 {
 	screenhide.value = screenhide.value.slice (0,0);	
 	//document.getElementById('scrn').style.background='grey';
-	scrn.innerHTML=screenhide2.value=valuechecker.value="";
+	scrn.innerHTML=screenhide2.value=valuechecker.value=""
 	
 }
 
@@ -61,7 +66,6 @@ function call()
 	var phonenumber=screenhide.value;
 	if(phonenumber.length==11)
 		{
-			phonenumber="";
 			if (amount>5)
 				{
 					setInterval(dat,1000)
@@ -95,8 +99,6 @@ function call()
 					setInterval(stopCall,5000);
 					function stopCall()
 						{
-							phonenumber="";
-							alert(phonenumber.lenght);
 							sound2.pause();
 							//document.getElementById('scrn').style.background='grey';
 							scrn.innerHTML=screenhide2.value=screenhide.value=valuechecker.value=   ""
@@ -162,7 +164,7 @@ function call()
 
 	}*/
 
-	else if (voucherString.search(screenhide2.value)>0 && screenhide.value=='*555*'+screenhide2.value+ '#')
+	else if (voucherString.search(screenhide2.value)>0 && screenhide.value=='*555*'+screenhide2.value+'#')
 		{
 			scrn.innerHTML="please wait...";
 			(cardused.includes(valuechecker.value))?
@@ -233,7 +235,7 @@ function accMsg()
 {
 	scrn.innerHTML="";
 	amount+=200;
-	scrn.innerHTML="Account Recharge of #200 was Succesful Pulse Main balance:#" + amount +".00 NGN; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
+	scrn.innerHTML="Accoint Recharge of #200 was Succesful Pulse Main balance:#" + amount +".00 NGN; Get 2.5GB & #2,500 talktime @ #2000 on XtraValue. Dial *131*311#, Val/30days";
 	for (var x = no.value-1; x < no.value; x++)
 		{
 			cardused[x]=screenhide2.value;
