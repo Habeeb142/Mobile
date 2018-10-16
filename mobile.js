@@ -2,12 +2,14 @@
 cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=0; var card1;var card2;var card3;
+var card; var amount=200; 
+var pulse=false; var xtraxpensive=false; var xtravalue=false; var xtracool=false;var betatalk=false;
 var sound1 = new Audio();
 sound1.src = "one.aac";
 var sound2 = new Audio();
 sound2.src = "two.aac";
 var tariff= "Pulse";
+
 
 
 setInterval(dateshow)
@@ -75,20 +77,44 @@ function call()
 							setTimeout(persec++,1000);
 							if (persec==1)
 								{
-									if(tariff='Beta Talk'){amount-=5;}
-									if(tariff='Pulse'){amount-=5;}
-									if(tariff='XtraExpencive'){amount-=10;}
-									if (tariff='XtraCool'){amount-=5}
-									if(tariff='XtraValue'){amount-=10}
+									//pulse
+									if(pulse && !betatalk && !xtraxpensive && !xtravalue && !xtracool)
+										{
+											amount-=5;alert(amount)
+										}
+									//beta talk
+									else if(!pulse && betatalk && !xtraxpensive && !xtravalue && !xtracool)
+										{
+											amount-=10;
+										}
+									//xtraexpensive
+									else if(!pulse && !betatalk && xtraxpensive && !xtravalue && !xtracool)
+										{
+											amount-=20;
+										}
+									//xtravalue
+									else if(!pulse && !betatalk && !xtraxpensive && xtravalue && !xtracool)
+										{
+											amount-=10;
+										}
+									//xtracool
+									else if(!pulse && !betatalk && !xtraxpensive && !xtravalue && xtracool)
+										{
+											amount-=5;
+										}
+									else if(!pulse && !betatalk && !xtraxpensive && !xtravalue && !xtracool)
+										{
+											amount-=5;
+										}
+									
 									persec=0;
 
-									if (amount<=100) {sound1.play()}
-									if (amount<=20)
+									if (amount<20)
 										{
 											//sound2.play();
 											call();
 										}
-									
+									if (amount<90) {sound1.play()}
 								}
 
 							setTimeout(countsec++,1000);
@@ -106,7 +132,7 @@ function call()
 					setInterval(stopCall,5000);
 					function stopCall()
 						{
-							sound2.pause();
+							sound2.pause();sound1.pause();
 							//document.getElementById('scrn').style.background='grey';
 							scrn.innerHTML=screenhide2.value=screenhide.value=valuechecker.value=   ""
 						}
@@ -158,6 +184,11 @@ function call()
 		{
 			scrn.innerHTML="please wait...";
 			tariff='Beta Talk';
+			betatalk=true;
+			pulse=false;
+			xtraxpensive=false;
+			xtravalue=false;
+			xtracool=false;
 			setTimeout(tarrifPlan,2000);
 		}
 
@@ -165,24 +196,44 @@ function call()
 		{
 			scrn.innerHTML="please wait...";
 			tariff='Pulse';
+			pulse=true;
+			betatalk=false;
+			xtraxpensive=false;
+			xtravalue=false;
+			xtracool=false;
 			setTimeout(tarrifPlan,2000);
 		}
 	else if (screenhide.value=='*123*2*3#' || screenhide.value=='*123#23')
 		{
 			scrn.innerHTML="please wait...";
-			tariff='XtraExpencive';
+			tariff='XtraExpensive';
+			pulse=false;
+			betatalk=false;
+			xtracool=false;
+			xtravalue=false;
+			xtraxpensive=true;
 			setTimeout(tarrifPlan,2000);
 		}
 	else if (screenhide.value=='*123*2*4#' || screenhide.value=='*123#24')
 		{
 			scrn.innerHTML="please wait...";
 			tariff='XtraCool';
+			pulse=false;
+			betatalk=false;
+			xtraxpensive=false;
+			xtravalue=false;
+			xtracool=true;
 			setTimeout(tarrifPlan,2000);
 		}
 	else if (screenhide.value=='*123*2*5#' || screenhide.value=='*123#25')
 		{
 			scrn.innerHTML="please wait...";
 			tariff='XtraValue';
+			pulse=false;
+			betatalk=false;
+			xtraxpensive=false;
+			xtracool=false;
+			xtravalue=true;
 			setTimeout(tarrifPlan,2000);
 		}
 	else if (screenhide.value=='*123*3#' || screenhide.value=='*123#3')
@@ -470,7 +521,7 @@ function msg14()
 function msg2()
 {
 	scrn.innerHTML="";
-	scrn.innerHTML="<ol><li>Beta Talk</li><li>Pulse</li><li>Xtra Special</li><li>XtraCool</li><li>Xtra Value</li>";
+	scrn.innerHTML="<ol><li>Beta Talk</li><li>Pulse</li><li>XtraExpensive</li><li>XtraCool</li><li>Xtra Value</li>";
 	scrn.innerHTML+='Enter 1,2,3,4 or 5 to proceed<br>';
 }
 
