@@ -169,11 +169,11 @@ function call()
 			setTimeout(msgUsedCard,2000):setTimeout(accMsg,2000);
 				
 		}
-	/*else if (voucherString.search(screenhide2.value)<0 && screenhide.value=='*555*'+screenhide2.value)
+	else if (voucherString.search(screenhide2.value)<0 && screenhide.value=='*555*'+screenhide2.value+ '#')
 		{
 			scrn.innerHTML="please wait...";
 			setTimeout(accMsgInvalid,2000);
-		}*/
+		}
 
 		
 
