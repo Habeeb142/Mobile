@@ -18,12 +18,12 @@ function dateshow()
 	showdate.innerHTML = new Date().getHours() + ":" + new Date().getMinutes();
 }
 
-function todo()
+/*function todo()
 {	
 	document.getElementById('todoList').style.width='170px';
 	//document.getElementById('todoList').style.width='90px';
 	todoList.innerHTML="<ol><li>Ability To call</li><br><li>Alert on empty account</li><br><li>Drop Call on Card Exhaust</li><br><li>*123# access</li><br><li>Voucher Generator</li><br><li>Recharge card LOad</li><br><li>Used Rechearge Identifier</li><br><li>Invalid Recharge Identifier</li><li>Account Balance Check</li><br>and more...";
-}
+}*/
 
 function pressHash()
 {
@@ -112,7 +112,6 @@ function call()
 
 									if (amount==20)
 										{
-											
 											call();
 										}
 									if (amount==100) {sound1.play()}
