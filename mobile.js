@@ -2,7 +2,7 @@
 cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=0; 
+var card; var amount=200; 
 var pulse=false; var xtraxpensive=false; var xtravalue=false; var xtracool=false;var betatalk=false;
 var sound1 = new Audio();
 sound1.src = "one.aac";
@@ -62,7 +62,7 @@ function abort()
 	//document.getElementById('scrn').style.background='grey';
 	scrn.innerHTML=screenhide2.value=valuechecker.value="";
 	screenhide.value="";
-	
+	clearInterval(dat)
 }
 
 function call()
@@ -116,7 +116,7 @@ function call()
 										}
 									if (amount==100) {sound1.play()}
 								}
-
+//clearInterval(dat);
 							setTimeout(countsec++,1000);
 							if (countsec==60)
 								{
@@ -136,7 +136,7 @@ function call()
 							//document.getElementById('scrn').style.background='grey';
 							setInterval(callAborting);
 							function callAborting()
-							{scrn.innerHTML="call ended";}
+							{scrn.innerHTML="please Refresh the page";}
 						}
 				}
 		}
@@ -799,7 +799,7 @@ function voucherGenerator()
 	for (i = 0; i < no.value; i++)
 	{	
 		voucher[i] =Math.floor(Math.random()*100000000000000);
-		voucherBr = voucher[i] + "<br>";
+		voucherBr = voucher[i] + "<br>";alert(voucherBr);
 		vouchers.innerHTML += voucherBr;
 		document.getElementById('vouchers').style.color='green';
 		voucherString = JSON.stringify(voucher);
