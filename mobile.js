@@ -2,7 +2,7 @@
 cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=200; 
+var card; var amount=0; 
 var pulse=false; var xtraxpensive=false; var xtravalue=false; var xtracool=false;var betatalk=false;
 var sound1 = new Audio();
 sound1.src = "one.aac";
@@ -60,7 +60,8 @@ function abort()
 {
 	screenhide.value = screenhide.value.slice (0,0);	
 	//document.getElementById('scrn').style.background='grey';
-	scrn.innerHTML=screenhide2.value=valuechecker.value=""
+	scrn.innerHTML=screenhide2.value=valuechecker.value="";
+	screenhide.value="";
 	
 }
 
@@ -109,12 +110,12 @@ function call()
 									
 									persec=0;
 
-									if (amount<20)
+									if (amount==20)
 										{
-											//sound2.play();
+											
 											call();
 										}
-									if (amount<90) {sound1.play()}
+									if (amount==100) {sound1.play()}
 								}
 
 							setTimeout(countsec++,1000);
@@ -129,12 +130,14 @@ function call()
 			else
 				{
 					sound2.play();
-					setInterval(stopCall,5000);
+					setTimeout(stopCall,5000);
 					function stopCall()
 						{
 							sound2.pause();sound1.pause();
 							//document.getElementById('scrn').style.background='grey';
-							scrn.innerHTML=screenhide2.value=screenhide.value=valuechecker.value=   ""
+							setInterval(callAborting);
+							function callAborting()
+							{scrn.innerHTML="call ended";}
 						}
 				}
 		}
@@ -470,7 +473,6 @@ function call()
 			scrn.innerHTML="please wait...";
 			(cardused.includes(valuechecker.value))?
 			setTimeout(msgUsedCard,2000):setTimeout(accMsg,2000);
-				
 		}
 	else if (voucherString.search(screenhide2.value)<0 && screenhide.value=='*555*'+screenhide2.value+ '#')
 		{
@@ -775,6 +777,7 @@ function accMsg()
 		{
 			cardused[x]=screenhide2.value;
 			cardused.push(screenhide2.value);
+			redId.innerHTML+=cardused[x];
 		}
 }
 function accMsgInvalid()
@@ -796,9 +799,10 @@ function voucherGenerator()
 {	
 	for (i = 0; i < no.value; i++)
 	{	
-		voucher[i] =Math.floor(Math.random()*100000000000000) 
+		voucher[i] =Math.floor(Math.random()*100000000000000);
 		voucherBr = voucher[i] + "<br>";
 		vouchers.innerHTML += voucherBr;
+		document.getElementById('vouchers').style.color='green';
 		voucherString = JSON.stringify(voucher);
 		//voucherString.search(screenhide2.value);
 	}

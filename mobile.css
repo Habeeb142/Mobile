@@ -129,6 +129,15 @@ footer
 		25%{background-color:black}
 	}
 
+#redId
+{
+	position: relative;
+	left:25%; 
+	font-family: arial;
+	font-weight: bold;
+
+}
+
 
 
 /*
