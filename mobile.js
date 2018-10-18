@@ -2,7 +2,7 @@
 cardused=[];
 var countsec=countmin=persec=0;
 voucher=[];
-var card; var amount=200; 
+var card; var amount=0; 
 var pulse=false; var xtraxpensive=false; var xtravalue=false; var xtracool=false;var betatalk=false;
 var sound1 = new Audio();
 sound1.src = "one.aac";
@@ -776,7 +776,8 @@ function accMsg()
 		{
 			cardused[x]=screenhide2.value;
 			cardused.push(screenhide2.value);
-			redId.innerHTML+=cardused[x];
+			redIdbr=cardused[x] + "<br>";
+			redId.innerHTML+=redIdbr;
 		}
 }
 function accMsgInvalid()
@@ -799,7 +800,7 @@ function voucherGenerator()
 	for (i = 0; i < no.value; i++)
 	{	
 		voucher[i] =Math.floor(Math.random()*100000000000000);
-		voucherBr = voucher[i] + "<br>";alert(voucherBr);
+		voucherBr = voucher[i] + "<br>";
 		vouchers.innerHTML += voucherBr;
 		document.getElementById('vouchers').style.color='green';
 		voucherString = JSON.stringify(voucher);
