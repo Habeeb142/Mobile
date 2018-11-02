@@ -2,10 +2,15 @@
 <html>
 <head>
 	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="mobile.css">
+	<script type="text/javascript" src="bootstrap/dist/js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="mobile.js"></script>
 </head>
-<body>
+<body onload="generate()">
 	<footer>
 	<fieldset align="center">
 		<legend>RECHARGE CARD VOUCHER</legend><br>
@@ -39,7 +44,7 @@
 		</tr>
 	</table>
 
-	<div id="redId" style="color: red"></div>	
+	<!-- <div id="redId" style="color: red"></div>	 -->
 	<div id="hidescreen">
 		<input type="text" name="" id="screenhide"><br>
 		<input type="number" name=""  id="screenhide2"><br>
